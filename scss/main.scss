@@ -208,7 +208,7 @@ footer {
   transition: all .5s;}}
 
 .contTextos{
-  margin-left: 3em; 
+  margin-left: 3em;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -249,7 +249,7 @@ footer {
   text-align: justify;
   width: 100%;
   font-size: 1.3em;
-  background: #f6f6f6; 
+  background: #f6f6f6;
   margin-top: 30px;
   margin-bottom: 30px;}
 
@@ -257,7 +257,7 @@ footer {
   border: #145c9e 5px outset;
   padding: 0;
   margin: auto;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 &:hover {
   transform: scale(1.005, 1.005);
   box-shadow: 5px 5px 10px #121113;
@@ -293,7 +293,7 @@ footer {
 .iframe {
   border: #145c9e 5px outset;
   width: 100%;
-  padding: 0; 
+  padding: 0;
 &:hover {
   transform: scale(1.01, 1.01);
   box-shadow: 5px 5px 10px #121113;
@@ -320,7 +320,7 @@ footer {
 =            CONTACTANOS comment block          =
 ===============================================*/
 #contForm {
-  margin: auto; 
+  margin: auto;
 .flexForm {
   display: flex;
   justify-content: center;
@@ -330,7 +330,7 @@ footer {
   font-size: 1.5em;
   border: #145c9e 5px outset;
   border-radius: 10px;
-  margin-bottom: 1em; 
+  margin-bottom: 1em;
 &:hover {
   box-shadow: 5px 5px 10px #121113;
   border: #121113 5px outset;
@@ -341,13 +341,13 @@ footer {
   margin: 5px 0px;
   background: #f6f6f6;
   border: #121113 #f6f6f6 4px inset;
-  border-radius: 10px; 
+  border-radius: 10px;
 &:focus {
   transform: scale(1.1);
   box-shadow: 5px 5px 10px #121113;
   transition: all .5s; }}
 .boton {
-  margin: 10px; 
+  margin: 10px;
 &:active {
   transform: scale(1.1);
   box-shadow: 5px 5px 10px #121113;
@@ -384,14 +384,14 @@ footer {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 3em; 
+    font-size: 3em;
     text-shadow: 3px 3px  #145c9e;}
   h2 {
-    font-size: 2em; 
+    font-size: 2em;
     margin-top: .5em;
-    text-shadow: 2px 2px  #145c9e;} 
+    text-shadow: 2px 2px  #145c9e;}
   .cajaParrafo p {
-    font-size: .8em; 
+    font-size: .8em;
     margin: 0;
     padding: 0 5px;}
   .fa-arrow-circle-up{
@@ -404,8 +404,8 @@ footer {
     font-size: .7em;
     display: flex;
     justify-content: center;
-    margin: auto; 
-    padding-top: 5px;} 
+    margin: auto;
+    padding-top: 5px;}
   .redes a i{
     padding-top: 5px;}
   .cajaLogoFooter{
@@ -418,7 +418,7 @@ footer {
   .cajaProd {
     display: flex;
     justify-content: center;
-    margin-right:0; } 
+    margin-right:0; }
   .listas{
     font-size: .6em;
     margin-bottom: 0;
