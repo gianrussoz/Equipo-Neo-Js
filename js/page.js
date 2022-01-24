@@ -1,25 +1,15 @@
-/*let nombre=prompt("Ingresa tu nombre: ");
-let apellido=prompt("Ingresa tu apellido: ");
-alert("¡Bienvenido/a " + nombre + " " + apellido + "!");
+let usuario = prompt("Ingresa tu nombre de usuario: ");
+    if (usuario == "gian" || usuario == "Gian" || usuario == "GIAN") {
+        alert("¡Bienvenido " + usuario + "!");
+    } else {
+        do {
+            alert("Usuario incorrecto, ingrese su nombre nuevamente.");
+            usuario = prompt("Ingresa tu nombre de usuario: ");
+        } while (usuario == "" || usuario == " " || usuario == null);
+}
 
-let numero = parseInt(prompt("Ingresa un numero (para terminar ingrese 00): "));
-let numero2 = parseInt(prompt("Ingresa otro numero (para terminar ingrese 00): "));
-while(numero || numero2 != 00){
-    let resultado=numero + numero2;
-    alert(resultado);
-    numero2 = parseInt(prompt("Ingresa otro numero (para terminar ingrese 00): "));
-}*/
-
-let nombre=prompt("Ingresa tu nombre: (termina si no ingresas nada)");
-do{
-alert("¡Bienvenido" + " " + nombre + "!");
-nombre=prompt("Ingresa tu nombre: (termina si no ingresas nada)");
-} while (nombre != "");
-
-let edad= parseInt(prompt("Ingrese su edad: "));
-if(isNaN(edad)){
-} else if(edad >=18){
-    alert("Sos mayor de edad");
-} else if(edad < 18){
-    alert("Sos menor de edad");
+const propiedades = ["Casa en venta", "Departamento en alquiler"];
+alert("Las propiedades disponibles son: ");
+for (let i = 0; i < propiedades.length; i++){
+    alert(propiedades[i]);
 }
