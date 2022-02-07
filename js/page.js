@@ -32,16 +32,13 @@ alert(`Departamento en ${dpto.negocio}, ubicado a mts de la estación de ${dpto.
 
 /* const propCasa = Propiedades.filter((el) => el.negocio.includes("venta")); también probe usando casa.filter/dpto.filter pero no funcionó
 const propDpto = Propiedades.filter((el) => el.negocio.includes("alquiler"));
+alert(propCasa);*/
 
-alert(propCasa); */
+const boton = document.getElementById("botonForm");
+boton.addEventListener("click", formEnviado);
+function formEnviado() {
+    console.log("Formulario enviado")
+};
 
-const titulo = document.getElementById("titulo");
-titulo.innerText = "texto de prueba";
-
-const parrafo = document.getElementById("parrafo");
-parrafo.remove();
-
-const h6 = document.createElement("h6");
-h6.innerHTML = "<h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>";
-document.body.append(h6);
-
+const input = document.getElementsByClassName("texto");
+input.onkeydown = () => { console.log("Tecla presionada") };
