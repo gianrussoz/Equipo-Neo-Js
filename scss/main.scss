@@ -24,16 +24,16 @@ body {
   padding: 30px 10px;
   font-size: 2em;
   text-shadow: 1px 1px #145c9e;
-  font-weight: bolder; 
+  font-weight: bolder;
 &:hover {
   color: #145c9e;
-  text-shadow: 1px 1px #121113; 
+  text-shadow: 1px 1px #121113;
 &:active {
   color: #121113;
   text-shadow: 1px 1px #145c9e; }}}
 
 .nav-item {
-  padding: 0 30px; 
+  padding: 0 30px;
 
 &:hover {
   color: #145c9e;
@@ -80,7 +80,7 @@ h1, h2 {
   text-align: center;
   text-transform: uppercase;
   text-shadow: 4px 4px #145c9e;
-  font-weight: bolder; 
+  font-weight: bolder;
   margin: auto;
   margin-top: .1em;}
 
@@ -91,10 +91,13 @@ h1, h2 {
 .form-inline{
   display: flex;
   justify-content: center;
+& input{
+  font-size: 1em;
+  padding: 5px 10px;
+}
 & input:hover{
-  padding: 5px;
-  box-shadow: 5px 5px 10px #121113;
   font-size: 1.2em;
+  box-shadow: 5px 5px 10px #121113;
   font-weight: bolder;
   transition: all .5s; }
 & select:hover{
@@ -110,7 +113,7 @@ h1, h2 {
   padding: 5px;
   margin: auto;
   margin-bottom: 40px;
-  background: #f6f6f6; }  
+  background: #f6f6f6; }
 
   /* Lo saque afuera del .cajaParrafo porque no me agarraba el estilo */
   p {
@@ -131,7 +134,7 @@ h1, h2 {
 =            FOOTER comment block            =
 ============================================*/
 footer {
-  background: #121113; 
+  background: #121113;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -178,7 +181,7 @@ footer {
 =       NUESTROS PRODUCTOS comment block     =
 ============================================*/
 .cajaProd {
-  margin-right: 100px; 
+  margin-right: 100px;
   padding-left: 0;
   padding-right: 0;
 .fotoProd {
@@ -191,7 +194,7 @@ footer {
 .seccion1 {
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 .listas {
   list-style-position: inside;
@@ -336,7 +339,7 @@ footer {
   border: #121113 5px outset;
   transition: all .5s; }}
 .form {
-  text-align: center; }
+    text-align: center; }
 .form-control {
   margin: 5px 0px;
   background: #f6f6f6;
@@ -480,3 +483,19 @@ footer {
     margin-top: .5em;}}
 
 /*======  End of Media Query comment block  ======*/
+
+/*===============================================
+=               DOM comment block          =
+===============================================*/
+#container {
+  display: flex;
+  justify-content: center;
+#botonIS {
+  @extend .nav-link;
+  margin: 5px;
+  padding: 0 0;
+  background: none;
+  border: none;
+  font-size: 2.3em;}}
+
+    /*======  End of DOM comment block  ======*/

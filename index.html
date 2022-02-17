@@ -11,10 +11,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@500&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <script src="https://kit.fontawesome.com/15a0f7cc53.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+ 
 </head>
 
 <body class="container-fluid">
@@ -43,6 +46,7 @@
         <a class="nav-link" href="pages/contactanos.html"><i class="fas fa-file-alt"></i>Contactanos</a>
       </li>
     </ul>
+    <div id="container"></div>
   </div>
 </nav><hr>
 <!-- Fin del header -->
@@ -53,16 +57,15 @@
       <img class="img-fluid col-lg-12 col-12" src="assets/purchase-33470531.jpg" alt="Fondo">
     </div>
 
-   <div class="row">
+    <div class="row">
       <h1 class="col-lg-12 col-12 animate__animated animate__fadeInDownBig">¡Bienvenido a Equipo Neo!</h1>
-   </div>
-
-   <div class="row mt-5 mb-5 contFormIndex">
+    </div>
+    <div class="row mt-5 mb-5 contFormIndex">
     <form class="col-lg-12 col-12 form-inline">
       <input type="text" class="form-control mb-2 mr-sm-2 texto" id="inlineFormInputName2" placeholder="¿Dónde querés mudarte?">
 
-      <label for="inputState">¿Que operación desea realizar?</label>
-      <select class="m-2 form-control" id="inputState" placeholder="¿Que operación desea realizar?" required>
+      <label for="formFiltro">¿Que operación desea realizar?</label>
+      <select class="m-2 form-control" id="formFiltro" placeholder="¿Que operación desea realizar?" required>
         <option>Comprar</option>
         <option>Alquilar</option>
         <option>Vender</option>
@@ -123,7 +126,7 @@
 
 <!-- JS -->
 <script src="js/page.js"></script>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>
