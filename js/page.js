@@ -57,7 +57,7 @@ function logIn() {
   }
 }
 function recuperarNU() {
-  let usuarioRecuperado = JSON.parse(localStorage.getItem('nombredeUsuario'));
+  let usuarioRecuperado = JSON.parse(localStorage.getItem('nombredeUsuario')) || [];
   console.log(usuarioRecuperado);
 }
 recuperarNU();
@@ -80,15 +80,23 @@ console.log(`Casa en ${casa.negocio}, ubicada en ${casa.ubicacion}, su precio ro
 propiedades.push(casa, dpto);
 propiedades.forEach(propiedades => console.log(propiedades));
 
-const filtroCasa = propiedades.find((el) => el.negocio === "venta");
+/* const filtroCasa = propiedades.find((el) => el.negocio === "venta");
 const filtroDpto = propiedades.find((el) => el.negocio === "alquiler");
 console.log(JSON.stringify(filtroCasa));
-console.log(JSON.stringify(filtroDpto));
+console.log(JSON.stringify(filtroDpto)); */
 /* const botonForm = document.getElementById("botonForm");
 
 botonForm.addEventListener("click", ()=>{
   carritoDeCompras = carritoDeCompras.filter(elemento => elemento.id != productoAgregar.id)));
 }*/
-//? Quise filtrar mediante el formulario del index, pero no llego a terminarlo
 
+// ! Operadores lógicos
+console.log(...propiedades);
 
+const [a, b] = propiedades;
+console.log(b);
+
+const estado = {
+  interior: "amueblado",
+}
+console.log(estado || "La propiedad no está amueblada.");
