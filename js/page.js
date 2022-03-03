@@ -53,7 +53,7 @@ function logIn() {
       }
     }).showToast();
       usuario = console.log("Ingresa tu nombre de usuario: ");
-    } while (usuario === "" || usuario === " " || usuario === null);
+    } while (usuario.trim() === "" || usuario === null);
   }
 }
 function recuperarNU() {
@@ -76,7 +76,6 @@ const casa = new Propiedades("venta", 234900, "Carapachay");
 const dpto = new Propiedades("alquiler", 40000, "Lisandro de La Torre");
 /* console.log (`Departamento en ${dpto.negocio}, ubicado a mts de la estación de ${dpto.ubicacion}. Su precio ronda los ${dpto.precio}ARS.`)
 console.log(`Casa en ${casa.negocio}, ubicada en ${casa.ubicacion}, su precio ronda los US$${casa.precio}`) */
-
 propiedades.push(casa, dpto);
 propiedades.forEach(propiedades => console.log(propiedades));
 
@@ -86,17 +85,47 @@ console.log(JSON.stringify(filtroCasa));
 console.log(JSON.stringify(filtroDpto)); */
 /* const botonForm = document.getElementById("botonForm");
 
-botonForm.addEventListener("click", ()=>{
+botonForm.addEventListener("submit", ()=>{
   carritoDeCompras = carritoDeCompras.filter(elemento => elemento.id != productoAgregar.id)));
 }*/
 
-// ! Operadores lógicos
-console.log(...propiedades);
+/* const formulario = document.querySelector(#formulario);
+formulario.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (formulario.value.trim() === "") {
+    return;
+  }
+}) */
 
-const [a, b] = propiedades;
-console.log(b);
 
-const estado = {
-  interior: "amueblado",
-}
-console.log(estado || "La propiedad no está amueblada.");
+/* const spinner = document.getElementById("ul");
+spinner.classList.add("loader");
+document.body.append(spinner);
+
+const spinner = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(comentarios);
+    }, 2000)
+  })}
+.then((comentarios) => {
+    mostrarApi();
+}) */
+
+//  Api
+const comentarios = document.querySelector("#ul");
+
+fetch('https://jsonplaceholder.typicode.com/comments')
+  .then(response => response.json())
+  .then(json => {
+    json.forEach((comments) => {
+      const li = document.createElement("li");
+      li.classList.add("containerLi");
+      li.innerHTML = `
+      <h4>${comments.name}</h4>
+      <small">✉️ ${comments.email}</small>
+      <p class="parrafoApi">${comments.body}</p>
+      `
+      comentarios.append(li);
+    })
+  })
