@@ -23,6 +23,7 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
+    "hover.css": "^2.3.2",
     "toastify-js": "^1.11.2"
   }
 }

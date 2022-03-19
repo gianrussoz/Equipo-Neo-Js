@@ -41,8 +41,6 @@ function logIn() {
       }
     }).showToast();
     localStorage.setItem("nombredeUsuario", JSON.stringify(usuario));
-/*  $('#exampleModal').hide();
-    $('.fade').hide(); */
     ;} else {
     do {
       Toastify({
@@ -62,70 +60,92 @@ function recuperarNU() {
 }
 recuperarNU();
 
-// Filtrado
-const botonForm = document.getElementById("botonForm").value;
+// Buscador
+  const buscador = document.querySelector("#buscadorInput");
 
-const propiedades = [];
-class Propiedades{
-    constructor(negocio, precio, ubicacion) {
-        this.negocio = negocio;
-        this.precio = precio;
-        this.ubicacion = ubicacion;
-}}
-const casa = new Propiedades("venta", 234900, "Carapachay");
-const dpto = new Propiedades("alquiler", 40000, "Lisandro de La Torre");
-/* console.log (`Departamento en ${dpto.negocio}, ubicado a mts de la estación de ${dpto.ubicacion}. Su precio ronda los ${dpto.precio}ARS.`)
-console.log(`Casa en ${casa.negocio}, ubicada en ${casa.ubicacion}, su precio ronda los US$${casa.precio}`) */
-propiedades.push(casa, dpto);
-propiedades.forEach(propiedades => console.log(propiedades));
+  buscador.addEventListener("input", () => {
+    if (buscador.value.trim() == "") {
+      mostrarProductos(arrayPropiedades);
+    } else {
+      mostrarProductos(arrayPropiedades.filter(el => el.tipo.toLowerCase().includes(buscador.value.toLowerCase())));
+    }
+  });
 
-/* const filtroCasa = propiedades.find((el) => el.negocio === "venta");
-const filtroDpto = propiedades.find((el) => el.negocio === "alquiler");
-console.log(JSON.stringify(filtroCasa));
-console.log(JSON.stringify(filtroDpto)); */
-/* const botonForm = document.getElementById("botonForm");
+// Select
+  const selectNegocio = document.getElementById("filtroNegocio");
+  const selectTipo = document.getElementById("filtroTipo");
 
-botonForm.addEventListener("submit", ()=>{
-  carritoDeCompras = carritoDeCompras.filter(elemento => elemento.id != productoAgregar.id)));
-}*/
+  selectNegocio.addEventListener('change', () => {
+    if (selectNegocio.value == 'all') {
+      mostrarProductos(arrayPropiedades);
+    } else {
+      mostrarProductos(arrayPropiedades.filter(el => el.negocio == selectNegocio.value));
+    }
+  })
 
-/* const formulario = document.querySelector(#formulario);
-formulario.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (formulario.value.trim() === "") {
-    return;
-  }
-}) */
+  selectTipo.addEventListener('change', () => {
+    if (selectTipo.value == 'all') {
+      mostrarProductos(arrayPropiedades);
+    } else {
+      mostrarProductos(arrayPropiedades.filter(el => el.tipo == selectTipo.value));
+    }
+  })
 
+// Productos
+  const containerCasa = document.querySelector("#containerCasa");
 
-/* const spinner = document.getElementById("ul");
-spinner.classList.add("loader");
-document.body.append(spinner);
+  mostrarProductos(arrayPropiedades);
+
+  function mostrarProductos(array) {
+    containerCasa.innerHTML = "";
+    array.forEach(casas => {
+      let div = document.createElement('div');
+      div.classList.add("arrayPropiedades");
+      div.innerHTML += `
+      <div class= "card-deck">
+        <div class="card underline-from-center" style="width: 18rem;">
+          <img src=${casas.img} class="card-img-top" alt="..."/>
+          <div class="card-body">
+            <h5 class="card-title">${casas.tipo}</h5>
+            <small class="text-muted">${casas.negocio} | ${casas.ubicacion}</small>
+            <p class="card-text">${casas.desc}</p>
+            <h6 class="cardPrecio">${casas.precio}</h6>
+          </div>
+        </div>
+      </div>`
+      containerCasa.appendChild(div);
+    })
+}
+
+// Spinner de carga
+containerCasa.innerHTML = '<img src="../assets/load.gif"></img>'
 
 const spinner = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(comentarios);
+      resolve(arrayPropiedades);
     }, 2000)
-  })}
-.then((comentarios) => {
-    mostrarApi();
-}) */
-
-//  Api
-const comentarios = document.querySelector("#ul");
-
-fetch('https://jsonplaceholder.typicode.com/comments')
-  .then(response => response.json())
-  .then(json => {
-    json.forEach((comments) => {
-      const li = document.createElement("li");
-      li.classList.add("containerLi");
-      li.innerHTML = `
-      <h4>${comments.name}</h4>
-      <small">✉️ ${comments.email}</small>
-      <p class="parrafoApi">${comments.body}</p>
-      `
-      comentarios.append(li);
-    })
   })
+    .then((res) => {
+      mostrarProductos(res);
+    })
+}
+
+spinner();
+
+// Api
+  const comentarios = document.querySelector("#ul");
+
+  fetch('https://jsonplaceholder.typicode.com/comments?_start=0&_limit=20')
+    .then(response => response.json())
+    .then(json => {
+      json.forEach((comments) => {
+        const li = document.createElement("li");
+        li.classList.add("containerLi");
+        li.innerHTML = `
+        <h4>${comments.name}</h4>
+        <small">✉️ ${comments.email}</small>
+        <p class="parrafoApi">${comments.body}</p>`
+        comentarios.append(li);
+      })
+    })

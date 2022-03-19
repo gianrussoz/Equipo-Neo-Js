@@ -91,7 +91,8 @@ h1, h2 {
 
 .form-inline {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  align-items: baseline; }
   .form-inline input {
     font-size: 1em;
     padding: 5px 10px; }
@@ -371,6 +372,25 @@ footer {
 
 /*======  End of CONTACTANOS comment block  ======*/
 /*===============================================
+=               SCROLLBAR comment block          =
+===============================================*/
+body::-webkit-scrollbar, #ul::-webkit-scrollbar {
+  height: 1em;
+  width: 1em; }
+
+body::-webkit-scrollbar-track {
+  background: #121113; }
+
+body::-webkit-scrollbar-thumb, #ul::-webkit-scrollbar-thumb {
+  background-color: #145c9e;
+  border-radius: 20px;
+  border: 3px solid #121113; }
+
+#ul::-webkit-scrollbar-track {
+  background: #f6f6f6; }
+
+/*======  End of SCROLLBAR comment block  ======*/
+/*===============================================
 =            Media Query comment block          =
 ===============================================*/
 /*  HEADER  */
@@ -485,56 +505,47 @@ footer {
     border: none;
     font-size: 2.3em; }
 
+.containerPropiedades {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 90%;
+  margin: auto;
+  margin-bottom: 3em; }
+  .containerPropiedades .arrayPropiedades {
+    margin: .5em; }
+    .containerPropiedades .arrayPropiedades .card {
+      border: solid #121113 .5px; }
+    .containerPropiedades .arrayPropiedades .card-title {
+      font-size: 2em;
+      text-shadow: 3px 2px 15px #969696;
+      margin: 0; }
+    .containerPropiedades .arrayPropiedades .text-muted {
+      font-size: 1em; }
+    .containerPropiedades .arrayPropiedades .card-text {
+      font-size: 0.9em; }
+    .containerPropiedades .arrayPropiedades .cardPrecio {
+      font-size: 1.5em;
+      text-shadow: 1px 0.5px 0px rgba(20, 92, 158, 0.45); }
+
 #ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: flex-start;
+  margin: auto;
+  width: 75%;
+  overflow-x: scroll; }
   #ul .containerLi {
-    background: #f6f6f6;
-    border: solid 1px black;
+    background: white;
+    border: solid 1px #121113;
     border-radius: 3px;
     margin: .3em;
     padding: .5em;
-    max-width: 35em;
+    min-width: 35em;
     height: auto; }
   #ul .parrafoApi {
-    font-size: 1.1em; }
-
-.loader {
-  --clr: #3498db;
-  width: 50px;
-  height: 50px;
-  position: relative; }
-
-.loader:before, .loader:after {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  border: 10px solid transparent;
-  border-top-color: var(--clr); }
-
-.loader:before {
-  z-index: 100;
-  animation: spin 1s infinite; }
-
-.loader:after {
-  border: 10px solid #ccc; }
-
-@keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg); } }
+    font-size: 0.9em;
+    margin: 0;
+    overflow-wrap: break-word; }
 
 /*======  End of DOM comment block  ======*/
